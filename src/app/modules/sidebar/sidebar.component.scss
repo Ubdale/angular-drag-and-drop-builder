@@ -1,0 +1,57 @@
+
+.btn:focus, .btn:active:focus, .btn.active:focus, .btn.active {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+.sidebar-body{
+    background-color: #25282b;
+    height: calc(100vh - 54px);
+}
+.input-search {
+    background-color: #30353a;
+    color: #ffffff;
+    border: none;
+    border-radius: 0.25rem;
+}
+
+.input-search::placeholder {
+    color: #adb5bd;
+    opacity: 1; 
+}
+
+.input-search::-webkit-input-placeholder {
+    color: #adb5bd;
+}
+
+.input-search::-moz-placeholder { 
+    color: #adb5bd;
+    opacity: 1;
+}
+
+.input-search:-ms-input-placeholder { 
+    color: #adb5bd;
+}
+
+.input-search:-moz-placeholder { 
+    color: #adb5bd;
+    opacity: 1;
+}
+.toggle-buttons-section{
+       background-color: #30353a;
+    color: #ffffff;
+    border: none;
+    border-radius: 0.25rem;
+}
+.toggle-buttons {
+    width: 50%;
+display: flex;
+text-align: center;
+justify-content: center;
+transition: background-color 0.3s ease-in-out;
+}
+.active-widget-button{
+    transition: all 0.3s ease-in-out;
+    background-color: #212529;
+    color: black;
+}

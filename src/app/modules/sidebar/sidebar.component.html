@@ -1,0 +1,40 @@
+<div class="sidebar-body">
+  <div class="container">
+    <div class="pt-3">
+      <input
+        placeholder="Search widgets..."
+        class="form-control focus-ring focus-ring-dark input-search"
+        type="search"
+        name="searchInput"
+        id="searchInput"
+      />
+    </div>
+    <div class="widgets-section border-top border-bottom border-secondary mt-2 py-3">
+      <div
+        class="toggle-buttons-section p-1 d-flex align-items-center justify-content-between"
+      >
+        <button
+          [ngClass]="{ 'active-widget-button': isWidgetButtonActive }"
+          class="toggle-buttons btn text-white"
+          (click)="widgetsButtonClicked()"
+        >
+          Widgets
+        </button>
+        <button
+          [ngClass]="{ 'active-widget-button': isLayerButtonsActive }"
+          class="toggle-buttons btn text-white"
+          (click)="layersButtonClicked()"
+        >
+          Layers
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="pt-3">
+    @if (isWidgetButtonActive) {
+      <app-widgets></app-widgets>
+    } @else if (isLayerButtonsActive) {
+      <app-layers></app-layers>
+    }
+  </div>
+</div>
