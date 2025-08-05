@@ -10,6 +10,7 @@ export const routes: Routes = [
     path: '',
     component: LayoutComponent,
     children: [
+      { path: '', redirectTo: 'preview-container', pathMatch: 'full' },
       { path: 'preview-container', component: PreviewContainerComponent },
       { path: 'sidebar', component: SidebarComponent },
       { path: 'widget-settings', component: WidgetsSettingsComponent },

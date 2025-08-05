@@ -1,9 +1,24 @@
 <div class="container-fluid">
-    <h2 class="sub-heading">Text</h2>
-    <button class="primary-button">
-        <span class="material-symbols-outlined">
-text_fields
-</span>
-Text
+<div
+  cdkDropList
+  cdkDropListId="widgets-list"
+  [cdkDropListData]="dragDropService.widgets"
+  class="widgets-container"
+>
+  @for (widget of dragDropService.widgets; track $index) {
+    @if(widget.title) {
+      <h2 class="sub-heading">{{widget.title}}</h2>
+    }
+    <button 
+      cdkDrag 
+      class="primary-button widgets w-100 my-3"
+      (cdkDragStarted)="onDragStarted($event, widget)"
+      (cdkDragEnded)="onDragEnded($event)"
+    >
+      <span class="material-symbols-outlined">{{ widget.icon }}</span>
+      <span class="widget-name">{{ widget.name }}</span>
     </button>
+  }
+</div>
+
 </div>

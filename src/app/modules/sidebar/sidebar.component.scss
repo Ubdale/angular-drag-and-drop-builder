@@ -6,7 +6,7 @@
 }
 .sidebar-body{
     background-color: #25282b;
-    height: calc(100vh - 54px);
+    max-height: calc(100vh - 54px);
 }
 .input-search {
     background-color: #30353a;
@@ -54,4 +54,8 @@ transition: background-color 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
     background-color: #212529;
     color: black;
+}
+.sidebar-scroll {
+     height: 72.3vh;
+    overflow-y: auto;
 }

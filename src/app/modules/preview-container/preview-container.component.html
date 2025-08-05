@@ -1,1 +1,44 @@
-<h1>This is the preview container</h1>
+<div class="preview-header">
+  <h3>Preview Container (Drop Zone)</h3>
+  <p>Drag widgets here from the sidebar</p>
+</div>
+
+<div
+  cdkDropList
+  cdkDropListId="preview-list"
+  [cdkDropListData]="dragDropService.preview"
+  (cdkDropListDropped)="onDrop($event)"
+  class="container-fluid preview-container"
+>
+  @if (dragDropService.preview.length === 0) {
+    <div class="empty-state">
+      <p>No widgets dropped yet. Drag widgets from the sidebar to see them here.</p>
+    </div>
+  }
+  
+  @for (item of dragDropService.preview; track $index) {
+    <div class="dropped-widget" cdkDrag>
+      @if(item.name === 'Text') {
+        <p class="widget-text">{{ item.name }}</p>
+      } @else if(item.name === 'Heading') {
+        <h3 class="widget-heading">{{ item.name }}</h3>
+      } @else if(item.name === 'Paragraph') {
+        <p class="widget-paragraph">{{ item.name }}</p>
+      } @else if(item.name === 'Button') {
+        <button class="btn btn-primary">{{ item.name }}</button>
+      } @else if(item.name === 'Link') {
+        <a href="#" class="widget-link">{{ item.name }}</a>
+      } @else if(item.name === 'Image') {
+        <div class="widget-image">
+          <span class="material-symbols-outlined">{{ item.icon }}</span>
+          <span>{{ item.name }}</span>
+        </div>
+      } @else {
+        <div class="widget-default">
+          <span class="material-symbols-outlined">{{ item.icon }}</span>
+          <span>{{ item.name }}</span>
+        </div>
+      }
+    </div>
+  }
+</div>
